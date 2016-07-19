@@ -43,6 +43,8 @@ public class Rotate2 {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5};
         Rotate2 r = new Rotate2();
+        double start = System.nanoTime();
         r.rotate(nums, 2);
+        System.out.println(System.nanoTime() - start);
     }
 }

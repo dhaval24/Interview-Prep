@@ -29,6 +29,8 @@ public class Rotate1 {
 
         int[] nums = {1,2,3,4,5};
         Rotate1 r = new Rotate1();
+        double start = System.nanoTime();
         r.rotate(nums, 2);
+        System.out.println(System.nanoTime() - start);
     }
 }
