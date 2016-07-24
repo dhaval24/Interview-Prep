@@ -23,9 +23,7 @@ public class ProductOfArrayExceptItself {
         int len = nums.length;
         int[] output = new int[len];
         int curr = 1;
-        for(int i = 0; i < len; i++) {
-            output[i] = 1;
-        }
+        output[len-1] = 1; // only last element needs to be 1;
         for (int i = len - 1; i > 0; i--) {
             curr *= nums[i];
             output[i-1] = curr;
@@ -33,7 +31,7 @@ public class ProductOfArrayExceptItself {
         curr = 1;
         for (int i = 1; i < len; i++) {
             curr *= nums[i-1];
-            output[i] = output[i] * curr;
+            output[i] *= curr;
         }
         return output;
 
