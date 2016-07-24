@@ -23,9 +23,6 @@ public class ProductOfArrayExceptItself {
         int len = nums.length;
         int[] output = new int[len];
         int curr = 1;
-        for(int i = 0; i < len; i++) {
-            output[i] = 1;
-        }
         for (int i = len - 1; i > 0; i--) {
             curr *= nums[i];
             output[i-1] = curr;
@@ -33,7 +30,14 @@ public class ProductOfArrayExceptItself {
         curr = 1;
         for (int i = 1; i < len; i++) {
             curr *= nums[i-1];
-            output[i] = output[i] * curr;
+            if (output[i] != 0) {
+                output[i] = output[i] * curr;
+            }
+            else{
+                output[i] = curr;
+            }
+
+
         }
         return output;
 
@@ -41,7 +45,7 @@ public class ProductOfArrayExceptItself {
 
     public static void main(String[] args) {
 
-        int[] nums = {1,2,3,4};
+        int[] nums = {0,2,3,4};
         System.out.println(Arrays.toString(new ProductOfArrayExceptItself().productExceptSelf(nums)));
     }
 }
