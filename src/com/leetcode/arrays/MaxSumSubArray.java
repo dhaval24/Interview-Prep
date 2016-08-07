@@ -6,7 +6,7 @@ package com.leetcode.arrays;
  * 2. Check if the current elemet is maximum till now or adding current to maximum till now makes maximum
  * 3. Update result to maximum current result and updated maximum
  * 4. Return result
- * 5. O(n) time and O(1) space algorithm 
+ * 5. O(n) time and O(1) space algorithm
  */
 public class MaxSumSubArray {
 
