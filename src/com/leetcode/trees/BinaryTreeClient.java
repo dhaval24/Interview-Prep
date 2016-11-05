@@ -28,7 +28,12 @@ public class BinaryTreeClient {
 //        ib.invertTree(b);
 //        b.traverseInOrder(b);
 
-        BinaryTreePathSum bpath = new BinaryTreePathSum();
-        System.out.println(bpath.hasPathSum(b,3));
+//        BinaryTreePathSum bpath = new BinaryTreePathSum();
+//        System.out.println(bpath.hasPathSum(b,3));
+
+        LowestCommonAncestor lc = new LowestCommonAncestor();
+        TreeNode<Integer> p = new TreeNode<>(-100);
+        TreeNode<Integer> q = new TreeNode<>(-71);
+        System.out.println("LCA is " + (lc.lowestCommonAncestor(b.root, p, q)).getValue());
     }
 }

@@ -74,14 +74,14 @@ public class WordSearch {
         }
         if (board[rowIndex][colIndex] != word[index]) return false;
 
-        board[rowIndex][colIndex] ^= 256; //masking
+        board[rowIndex][colIndex] ^= 256; //masking to mark as visited
 
         boolean res = existElegant(board, word, index + 1, rowIndex + 1, colIndex) ||
                 existElegant(board, word, index + 1, rowIndex, colIndex + 1) ||
                 existElegant(board, word, index + 1, rowIndex - 1, colIndex) ||
                 existElegant(board, word, index + 1, rowIndex, colIndex - 1);
 
-        board[rowIndex][colIndex] ^= 256; //unmasking
+        board[rowIndex][colIndex] ^= 256; //unmasking to mark again as unvisited
 
         return res;
     }
