@@ -13,24 +13,16 @@ public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
         int len = strs.length;
         Map<String, List<String>> map = new HashMap<>();
-        List<List<String>> result = new ArrayList<>();
+
         for (int i = 0; i < len; i++) {
             String curr = sortString(strs[i]);
             if (!map.containsKey(curr)) {
-                List<String> temp = new ArrayList<>();
-                temp.add(strs[i]);
-                map.put(curr, temp);
+                map.put(curr, new ArrayList<>());
             }
-            else{
-                List<String> temp = map.get(curr);
-                temp.add(strs[i]);
-                map.put(curr, temp);
-            }
+            map.get(curr).add(strs[i]);
         }
-        for (Map.Entry entry : map.entrySet()) {
-            result.add((List<String>)entry.getValue());
-        }
-        return result;
+
+        return new ArrayList<>(map.values());
 
     }
 

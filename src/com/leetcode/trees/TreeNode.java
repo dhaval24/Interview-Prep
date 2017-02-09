@@ -5,14 +5,14 @@ package com.leetcode.trees;
  */
 public class TreeNode<T> {
 
-    private T value;
+    T value;
 
     public T getValue() {
         return value;
     }
 
-    private TreeNode<T> left;
-    private TreeNode<T> right;
+    TreeNode<T> left;
+    TreeNode<T> right;
 
     public TreeNode(T value) {
         this.value = value;

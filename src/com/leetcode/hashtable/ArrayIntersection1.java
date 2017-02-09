@@ -1,7 +1,9 @@
 package com.leetcode.hashtable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -39,8 +41,8 @@ public class ArrayIntersection1 {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = {1,2,2,3};
-        int[] nums2 = {2,2};
-        System.out.println(Arrays.toString(new ArrayIntersection2().intersect(nums1, nums2)));
+        int[] nums1 = {3,1,2};
+        int[] nums2 = {1,3};
+        System.out.println(Arrays.toString(new ArrayIntersection1().intersection(nums1, nums2)));
     }
 }

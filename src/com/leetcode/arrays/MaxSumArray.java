@@ -24,8 +24,8 @@ public class MaxSumArray {
             }
 
             // If currSum becomes equal to sum, then return true
-            if (currSum <= sum)
-            {
+            if (currSum <= sum) {
+
                 int p = i-1;
                 maxLength = Math.max(maxLength, p - start + 1);
             }

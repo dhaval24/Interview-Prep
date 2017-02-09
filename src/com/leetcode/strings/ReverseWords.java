@@ -16,7 +16,7 @@ public class ReverseWords {
         int end = len - 1;
         reverse(sb, start, end);
         end = 0;
-        while (start < len && end < len) {
+        while ( end < len) {
             if (sb.charAt(end) == ' ') {
                 reverse(sb, start, end-1);
                 end++;
@@ -47,6 +47,6 @@ public class ReverseWords {
     }
 
     public static void main(String[] args) {
-        System.out.println(new ReverseWords().reverseWords(" a  b  "));
+        System.out.println(new ReverseWords().reverseWords(" dhaval  rain "));
     }
 }

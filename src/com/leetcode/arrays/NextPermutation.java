@@ -15,7 +15,7 @@ public class NextPermutation {
         int index = 0;
         // Start in reverse order and find first element which is smaller than the ith element.
         //This is the element to be maximized
-        for (int i = len-1; i >0; i--) {
+        for (int i = len-1; i > 0; i--) {
             if (nums[i] > nums[i-1]) {
                 index = i;
                 break;
@@ -60,8 +60,54 @@ public class NextPermutation {
         nums[j] = temp;
     }
 
+
+    public String getNextPermutationString(String s) {
+
+        StringBuilder sb = new StringBuilder(s);
+        int len = sb.length();
+        if (len < 2) {
+            return "no answer";
+        }
+
+        int index = 0;
+        for (int i = len-1; i >0; i--) {
+            if (sb.charAt(i) > sb.charAt(i-1)) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index == 0) {
+            return "no answer";
+        }
+        else {
+            for (int i = len-1; i >= index; i--) {
+                if (sb.charAt(i) > sb.charAt(index-1)) {
+                    swap(sb, i, index-1);
+                    break;
+                }
+            }
+            int start = index;
+            int end = len - 1;
+            while (start <= end) {
+                swap(sb, start, end);
+                start++;
+                end--;
+            }
+        }
+        return sb.toString();
+    }
+
+    private void swap(StringBuilder sb, int i, int j) {
+        char temp = sb.charAt(i);
+        sb.setCharAt(i, sb.charAt(j));
+        sb.setCharAt(j, temp);
+    }
+
     public static void main(String[] args) {
-        new NextPermutation().getNextPermutation(new int[] {1,3,4,2});
+
+        //new NextPermutation().getNextPermutation(new int[] {1,3,4,2});
+        new NextPermutation().getNextPermutationString("gfg");
     }
 
 }

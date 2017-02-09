@@ -66,8 +66,32 @@ public class Subset {
         return result;
     }
 
+
+    public List<List<Integer>> subsets1(int[] nums) {
+
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+        if (nums == null) return result;
+        return subsets1(nums, result, new ArrayList<>(), 0);
+    }
+
+    private List<List<Integer>> subsets1(int[] nums, List<List<Integer>> result, List<Integer> temp, int index) {
+
+        if (index == nums.length) {
+            return result;
+        }
+
+        for (int i = index; i < nums.length; i++) {
+            temp.add(nums[i]);
+            result.add(new ArrayList<>(temp));
+            subsets1(nums, result, temp, ++index);
+            temp.remove(temp.size()-1);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
-        System.out.println(new Subset().getAllSubset(new int[] {1,2,3}));
+        System.out.println(new Subset().subsets1(new int[] {1,2,3}));
     }
 }

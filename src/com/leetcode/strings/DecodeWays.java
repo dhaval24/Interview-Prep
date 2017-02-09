@@ -27,11 +27,12 @@ public class DecodeWays {
                 }
             }
         }
+
         return buffer[0];
     }
 
     public static void main(String[] args) {
-        System.out.println(new DecodeWays().numDecodings("101"));
+        System.out.println(new DecodeWays().numDecodings("1001"));
     }
 
 }
