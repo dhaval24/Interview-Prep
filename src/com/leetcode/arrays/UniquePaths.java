@@ -58,7 +58,7 @@ public class UniquePaths {
 
     public static void main(String[] args) {
 
-        System.out.println(new UniquePaths().uniquePathsCombinatorial(3,3));
+        System.out.println(new UniquePaths().uniquePathsCombinatorial(4,6));
         System.out.println(new UniquePaths().uniquePathsDP(3,3));
     }
 }

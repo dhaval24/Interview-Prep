@@ -13,7 +13,7 @@ public class Permutations {
 
         List<List<Integer>> res = new ArrayList<>();
         if (nums.length < 1) return res;
-        permute(nums, res, new ArrayList<Integer>(), 0);
+        permute(nums, res, new ArrayList<>(), 0);
         return res;
     }
 
